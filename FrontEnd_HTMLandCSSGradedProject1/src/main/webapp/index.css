@@ -1,0 +1,324 @@
+.all-browsers {
+  margin: 0;
+  padding: 5px;
+  background-color:DimGray;
+  color: white;
+  text-align: center
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #808080;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: steelblue;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 20%;
+  padding: 0 5px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -50px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+.brands-container {
+    /* all pictures should be the same size as this value. */
+    max-width: 100%;
+    margin: auto;
+    padding:0 1em;
+    overflow: hidden;
+    border: 2px solid steelblue;
+  }
+  
+  .brands-carousel {
+    position: relative;
+    padding-left: 0;
+    margin: 0;
+    height: 500px;
+    overflow: hidden;
+  }
+  
+  .brands-carousel > div {
+    width: 100%;
+  }
+
+  .brands-carousel > picture {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    animation: carousel 20s linear infinite;
+  
+    /* It also starts off the screen until it is time. */
+    transform: translateX(100%);
+  }
+
+  .brands-carousel > picture:nth-child(1) {
+    animation-name: first-picture, carousel;
+    animation-duration: 20s;
+    animation-iteration-count: 1, infinite;
+    animation-delay: 0s, 20s;
+    transform: translateX(0%);
+  }
+  .brands-carousel > picture:nth-child(2) {
+    animation-delay: Calc(20s * .25);
+  }
+  .brands-carousel > picture:nth-child(3) {
+    animation-delay: Calc(20s * .50);
+  }
+  .brands-carousel > picture:nth-child(4) {
+    animation-delay: Calc(20s * .75);
+  }
+  /* .brands-carousel > picture:nth-child(5) {
+    animation-delay: Calc(20s * .99);
+  } */
+
+  /* The keyframes for desktop */
+@keyframes first-picture {
+    0% { transform: translateX(0%); }
+    7.5%, 33% { transform: translateX(0); }
+    40.5%, 100% { transform: translateX(-100%); }
+  }
+  
+  @keyframes carousel {
+    0% { transform: translateX(100%); }
+    7.5%, 33% { transform: translateX(0); }
+    40.5%, 100% { transform: translateX(-100%); }
+  }
+
+  @keyframes first-picture-responsive {
+    0% { transform: translateX(0%); }
+    5.5%, 25% { transform: translateX(0); }
+    30.5%, 100% { transform: translateX(-100%); }
+  }
+  
+  @keyframes carousel-responsive {
+    0% { transform: translateX(100%); }
+    5.5%, 25% { transform: translateX(0); }
+    30.5%, 100% { transform: translateX(-100%); }
+  }
+
+  .brands-carousel > picture:last-child {
+    display: none;
+  }
+
+  @media screen and (max-width: 1920px) {
+    .brands-carousel > picture {
+      animation: carousel-responsive 27s linear infinite;
+    }
+  
+    .brands-carousel > picture:nth-child(1) {
+      animation-name: first-picture-responsive, carousel-responsive;
+      animation-duration: 27s;
+      animation-iteration-count: 1, infinite;
+      animation-delay: 0s, 27s;
+    }
+  
+    .brands-carousel > picture:nth-child(2) {
+      animation-delay: Calc(27s * .25);
+    }
+    .brands-carousel > picture:nth-child(3) {
+      animation-delay: Calc(27s * .50);
+    }
+    .brands-carousel > picture:nth-child(3) {
+        animation-delay: Calc(27s * .75);
+      }
+    /* .brands-carousel > picture:nth-child(4) {
+      animation-delay: Calc(27s * .100);
+      
+    } */
+  }
+
+  /* # Updating all the 20s => 23.5s */
+@keyframes carousel {
+    0% { transform: translateX(100%); }
+    6.4%, 33% { transform: translateX(0); }
+    39.4%, 100% { transform: translateX(-100%); }
+  }
+
+ /*covid section */
+.block{
+  padding-bottom: 10px;
+}
+#cart{
+  background-color: white;
+}
+#abc{
+  font-size: 35px;
+}
+
+  .column{
+    position: inherit;
+     display: grid;
+     grid-template-columns: auto auto auto auto;
+     grid-gap: 1%;
+  }
+@media only screen and (max-width:600px){
+   .card{
+    content:"too Short";
+    animation: shake-animation 1s ease infinite;
+    transform-origin: 50% 50%;
+
+   }
+   @keyframes shake-animation {
+    0% {transform: translate(0,0)}
+    1.78571%{transform: translate(10px,0)}
+    3.57143%{transform: translate(5px,0)}
+    5.35714%{transform: translate(0,0)}
+    7.14286%{transform: translate(10px,0)}
+    8.92857%{transform: translate(5px,0)}
+    10.71429%{transform: translate(0,0)}
+    100%{transform: translate(10px,0)}
+   }
+}
+
+
+.card{
+    background-color: #f3f3fd;
+    /* width: 260px;
+    height: 350px; */
+/* this is new */
+    width: 80%;
+    height: 100%;
+/* till here */
+    box-shadow: 5px 10px #e2e2e1;
+    text-align: center;
+    padding-left: 3px;
+  }
+  @media only screen and (max-width:600px){
+    .card{
+      background-color: #f3f3fd;
+      /* width: 260px;
+      height: 350px; */
+  /* this is new */
+      max-width: 300px;
+      height: auto;
+  /* till here */
+      box-shadow: 5px 10px #e2e2e1;
+      text-align: center;
+      padding-left: 3px;
+    }
+  }
+
+  button{
+    background-color: #bdc7f4;
+    border: 1px solid steelblue;
+    color:#f7a956 ;
+    text-decoration: none;
+    display: inline;
+    font-size: 19px;
+    width: 100%;
+    border-radius: 9px;
+    font-weight: bold;
+  }
+  button:active{
+    background-color: rgb(250, 234, 230);
+    border: rgb(0, 255, 76);
+  }
+  /* .button:visited{
+    background-color: rgb(250, 234, 230);
+    border: rgb(0, 255, 76);
+  } */
+
+  .card>p{
+    text-align: left;
+    color: #6988e5;
+    font-weight: bold;
+  }
+  @media only screen and (max-width:600px) {
+    .card>p{
+      text-align: left;
+      left: 20%;
+      color: #6988e5;
+      font-weight: bold;
+    }
+    }
+
+  .card:nth-child(1):hover,.card:nth-child(2):hover,.card:nth-child(3):hover,.card:nth-child(4):hover{
+    /* width: 310px;
+    height:380px; */
+/* from; */
+    width: 100%;
+    height:105%;
+
+/* till */
+    background-color: #f3f3fd;
+    box-shadow: 5px 10px #858582;
+  }
+
+  #cart{
+    margin: auto;
+    /* padding: 40px; */
+    /* this */
+    padding: 5%;
+  }
+  /* #d1:hover,#d2:hover,#d3:hover,#d4:hover{
+    width: 290px;
+    height:325px;
+  } */
+  
+
+footer {
+  text-align: right;
+  padding: 3px;
+  background-color: black;
+  color: white;
+}
